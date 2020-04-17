@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Adivina</string>
+    <string name="adivinha">ADIVINHA</string>
+    <string name="digite_um_numero">Introduza um numero entre 1 e 10</string>
+    <string name="enviar">enviar</string>
+    <string name="textviewResultado">Resultado</string>
+    <string name="Resultado">já Fez:</string>
+</resources>
