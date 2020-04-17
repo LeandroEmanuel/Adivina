@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -14,8 +16,10 @@ import java.util.Random;
 public class MainActivity extends AppCompatActivity {
 
     private Random random = new Random();
-    public int numeroGerado = random.nextInt(10)+1;
-    public int tentativas = 0;
+    public int numeroGerado;
+    public int tentativas;
+    public boolean acertou = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,25 +31,38 @@ public class MainActivity extends AppCompatActivity {
 
         EditText editTextValor = (EditText) findViewById(R.id.valorAdivinha);
         String valor = editTextValor.getText().toString();
-        int numeroDigitado = Integer.parseInt(valor);
-        TextView resultado = findViewById(R.id.textViewResultado);
-        tentativas++;
-        if(numeroDigitado != numeroGerado){// compara o numero digitado com o geradpo*/
-            resultado.setText("Acertou  depois de:\n"+tentativas+" tentativas");
-        } else{
-            resultado.setText(getString(R.string.Resultado)+ "\t"+ tentativas);
-        }
+        Button button = (Button)findViewById(R.id.buttonSend);
 
-        /*if(valor.length() == 0){
+        if(valor.length() == 0){
             editTextValor.setError(editTextValor.getHint());
             editTextValor.requestFocus();
             return;
-        }*/
-        /*if(Integer.parseInt(valor)<0 || Integer.parseInt(valor)>10){
-            editTextValor.setError("\n Apenas numeros entre 1 e 10");
+        }
+        if(Integer.parseInt(valor)<0 || Integer.parseInt(valor)>10){
+            editTextValor.setError(getString(R.string.intervalo_de_valores));
             editTextValor.requestFocus();
             editTextValor.setText("");
             return;
-        }*/
+        }
+
+        int numeroDigitado = Integer.parseInt(valor);
+        TextView resultado = findViewById(R.id.textViewResultado);
+
+        if(acertou){
+            button.setText(R.string.eviarButton);
+            numeroGerado = random.nextInt(10)+1;
+            tentativas = 0;
+            resultado.setText(R.string.eviarButton+"\t"+tentativas+getString(R.string.tentativas));
+            acertou = false;
+        } else{
+            tentativas++;
+            if(numeroDigitado == numeroGerado){// compara o numero digitado com o geradpo
+                resultado.setText(getString(R.string.acertou_depois_de)+tentativas+getString(R.string.tentativas));
+                button.setText(R.string.recomeçar);
+                acertou = true;
+            } else{
+                resultado.setText(R.string.eviarButton+"\t"+tentativas+getString(R.string.tentativas));
+            }
+        }
     }
 }

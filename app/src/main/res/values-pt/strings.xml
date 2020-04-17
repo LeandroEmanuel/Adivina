@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="adivinha">ADIVINHA</string>
+    <string name="digite_um_numero">Introduza um numero entre 1 e 10</string>
+    <string name="enviar">enviar</string>
+    <string name="textviewResultado">Resultado</string>
+    <string name="resultado">já Fez:</string>
+    <string name="eviarButton">Enviar</string>
+    <string name="tente_adivinhar_o_numero_em_que_estou_a_pensar">Tente adivinhar o numero em que estou a pensar</string>
+    <string name="recomeçar">Recomeçar</string>
+    <string name="app_name">Adivina</string>
+    <string name="intervalo_de_valores">Apenas numeros entre 0 e 10</string>
+    <string name="tentativas">tentativas</string>
+    <string name="acertou_depois_de">Acertou depois de:\n</string>
+</resources>
