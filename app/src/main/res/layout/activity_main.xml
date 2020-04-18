@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#232222"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
@@ -19,8 +20,11 @@
         android:gravity="center"
         android:paddingTop="16dp"
         android:text="@string/adivinha"
+        android:textColor="#E9954DA1"
+        android:textColorHint="#E9954DA1"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -32,8 +36,11 @@
         android:layout_marginLeft="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
+        android:background="#232222"
         android:gravity="center"
         android:text="@string/tente_adivinhar_o_numero_em_que_estou_a_pensar"
+        android:textColor="#9EFFC107"
+        android:textColorHint="#FFFEFE"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/textInputLayout3"
         app:layout_constraintEnd_toEndOf="parent"
@@ -48,6 +55,9 @@
         android:layout_marginLeft="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
+        android:textColorHint="#9EFFC107"
+        app:boxStrokeColor="#F44336"
+        app:hintTextColor="#F44336"
         app:layout_constraintBottom_toTopOf="@+id/textViewResultado"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -61,15 +71,24 @@
             android:layout_marginTop="200dp"
             android:layout_marginRight="16dp"
             android:hint="@string/digite_um_numero"
-            android:inputType="number" />
+            android:inputType="number"
+            android:shadowColor="@color/colorPrimary"
+            android:textAllCaps="false"
+            android:textColor="#9EFFC107"
+            android:textColorHint="#F44336"
+            android:textColorLink="#F44336" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/buttonSend"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="104dp"
+        android:layout_height="58dp"
+        android:background="#2E2B2B"
         android:onClick="tentativa"
         android:text="@string/enviar"
+        android:textColor="#F44336"
+        android:textColorHint="#9EFFC107"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -84,6 +103,8 @@
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:gravity="center"
+        android:textColor="#9EFFC107"
+        android:textColorHint="#FFFEFE"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/buttonSend"
         app:layout_constraintEnd_toEndOf="parent"
