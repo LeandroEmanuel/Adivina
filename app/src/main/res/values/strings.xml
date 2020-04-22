@@ -8,7 +8,7 @@
     <string name="eviarButton">Send</string>
     <string name="tente_adivinhar_o_numero_em_que_estou_a_pensar">Try gess what value i have tinked</string>
     <string name="recomeçar">Restart</string>
-    <string name="intervalo_de_valores">Only numbers between 0 and 10</string>
+    <string name="intervalo_de_valores">Only numbers between 1 and 10</string>
     <string name="tentativas"> attempts</string>
     <string name="acertou_depois_de">Got it right after: </string>
 </resources>

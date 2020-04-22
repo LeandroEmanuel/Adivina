@@ -9,7 +9,7 @@
     <string name="tente_adivinhar_o_numero_em_que_estou_a_pensar">Tente adivinhar o numero em que estou a pensar</string>
     <string name="recomeçar">Recomeçar</string>
     <string name="app_name">Adivina</string>
-    <string name="intervalo_de_valores">Apenas numeros entre 0 e 10</string>
+    <string name="intervalo_de_valores">Apenas numeros entre 1 e 10</string>
     <string name="tentativas">tentativas</string>
     <string name="acertou_depois_de">Acertou depois de:</string>
 </resources>

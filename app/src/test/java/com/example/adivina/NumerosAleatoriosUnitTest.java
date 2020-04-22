@@ -9,9 +9,12 @@ import static org.junit.Assert.*;
  *
  * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
  */
-public class ExampleUnitTest {
+public class NumerosAleatoriosUnitTest {
     @Test
-    public void addition_isCorrect() {
-        assertEquals(4, 2 + 2);
+    public void numerosAleatoriosFuncionaCorretamente() {
+        for (int i = 0; i < 1000000; i++){
+            int n = NumerosAliatorios.proximoNumero();
+            assertTrue(n >=1 && n <= 10);
+        }
     }
 }

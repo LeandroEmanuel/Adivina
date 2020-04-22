@@ -16,12 +16,11 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Random random = new Random();
-    public int numeroGerado;
+    //private Random random = new Random();
+    public int numeroGerado = NumerosAliatorios.proximoNumero();
     public int tentativas = 0;
     public boolean acertou = false;
 
@@ -44,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
             editTextValor.requestFocus();
             return;
         }
-        if(Integer.parseInt(valor)<0 || Integer.parseInt(valor)>10){
+        if(Integer.parseInt(valor) < 1 || Integer.parseInt(valor) > 10){
             editTextValor.setError(getString(R.string.intervalo_de_valores));
             editTextValor.requestFocus();
             editTextValor.setText("");
@@ -53,11 +52,10 @@ public class MainActivity extends AppCompatActivity {
 
         int numeroDigitado = Integer.parseInt(valor);
         TextView resultado = findViewById(R.id.textViewResultado);
-
         if(acertou){
             button.setText(R.string.eviarButton);
-            numeroGerado = random.nextInt(10)+1;
             tentativas = 0;
+            numeroGerado = NumerosAliatorios.proximoNumero();
             resultado.setText(getString(R.string.resultado)+"\t"+tentativas+getString(R.string.tentativas));
             acertou = false;
 
