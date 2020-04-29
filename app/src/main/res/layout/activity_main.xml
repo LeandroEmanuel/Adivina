@@ -55,9 +55,9 @@
         android:layout_marginLeft="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
-        android:textColorHint="#9EFFC107"
-        app:boxStrokeColor="#F44336"
-        app:hintTextColor="#F44336"
+        android:textColorHint="@color/butaoTexto"
+        app:boxStrokeColor="@color/butaoTexto"
+        app:hintTextColor="@color/colorPrimary"
         app:layout_constraintBottom_toTopOf="@+id/textViewResultado"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -74,9 +74,11 @@
             android:inputType="number"
             android:shadowColor="@color/colorPrimary"
             android:textAllCaps="false"
-            android:textColor="#9EFFC107"
+            android:textColor="@color/colorPrimary"
+            android:textColorHighlight="@color/colorPrimary"
             android:textColorHint="#F44336"
-            android:textColorLink="#F44336" />
+            android:textColorLink="#F44336"
+            android:textCursorDrawable="@color/colorPrimary" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button

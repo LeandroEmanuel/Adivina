@@ -24,10 +24,30 @@ public class MainActivity extends AppCompatActivity {
     public int tentativas = 0;
     public boolean acertou = false;
 
+    static final String ESTADO_NUMERO_GERADO ="numeroGerado";// constant Caps
+    static final String ESTADO_TENTATIVAS ="tentativas";
+
     @Override
+    public void onSaveInstanceState(Bundle saveInstanceState) {
+        saveInstanceState.putInt(ESTADO_NUMERO_GERADO, numeroGerado);
+        saveInstanceState.putInt(ESTADO_TENTATIVAS, tentativas);
+
+        super.onSaveInstanceState(saveInstanceState);
+    }
+
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+        super.onCreate(savedInstanceState);// para chamar primeiro a superclass primeiro
         setContentView(R.layout.activity_main);
+        if(savedInstanceState != null){
+            numeroGerado = savedInstanceState.getInt(ESTADO_NUMERO_GERADO);
+            tentativas = savedInstanceState.getInt(ESTADO_TENTATIVAS);
+        }else{
+            numeroGerado = NumerosAliatorios.proximoNumero();
+            tentativas = 0;
+            acertou = false;
+        }
+
+        setTitle("Adivinha "+" by: Leandro Gomes");// alterar o titulo da app
        //  Toast.makeText(this,"numero\n"+ numeroGerado,Toast.LENGTH_SHORT).show();
     }
 
